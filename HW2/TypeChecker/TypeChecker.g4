@@ -34,9 +34,11 @@ RPAREN: ')';
 
 fragment DIGIT: [0-9];
 INTEGER: DIGIT+;
-FLOAT: DIGIT+;
-STRING:'"' [~ "]* '"'; //\"
+FLOAT: DIGIT+ '.' DIGIT* | '.' DIGIT+; // I modified this rule
+//STRING:'"' [~ "]* '"'; //\" // this one had an error
+STRING: '"' (ESC | .)*? '"'; // I needed to define it this way
 ID: [a-zA-Z_] [a-zA-Z0-9_]*;
 
+fragment ESC: '\\"' | '\\\\';
 
 WS: [ \t\r\n]+ -> skip;
