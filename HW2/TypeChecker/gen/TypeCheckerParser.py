@@ -1,4 +1,4 @@
-# Generated from E:/IUST/TA/Compiler-14031/antlr_projects/2-TypeChecker/TypeChecker.g4 by ANTLR 4.13.2
+# Generated from D:/Elmos/S4031/CompilerDesign/IUST-CompilerDesignCourse/HW2/TypeChecker/TypeChecker.g4 by ANTLR 4.13.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -19,12 +19,12 @@ def serializedATN():
         60,1,0,0,0,12,13,3,2,1,0,13,14,5,0,0,1,14,1,1,0,0,0,15,17,3,4,2,
         0,16,15,1,0,0,0,17,18,1,0,0,0,18,16,1,0,0,0,18,19,1,0,0,0,19,3,1,
         0,0,0,20,21,5,12,0,0,21,22,5,6,0,0,22,23,3,6,3,0,23,24,5,1,0,0,24,
-        5,1,0,0,0,25,26,6,3,-1,0,26,27,3,8,4,0,27,36,1,0,0,0,28,29,10,3,
-        0,0,29,30,5,2,0,0,30,35,3,8,4,0,31,32,10,2,0,0,32,33,5,3,0,0,33,
+        5,1,0,0,0,25,26,6,3,-1,0,26,27,3,8,4,0,27,36,1,0,0,0,28,29,10,2,
+        0,0,29,30,5,2,0,0,30,35,3,8,4,0,31,32,10,1,0,0,32,33,5,3,0,0,33,
         35,3,8,4,0,34,28,1,0,0,0,34,31,1,0,0,0,35,38,1,0,0,0,36,34,1,0,0,
         0,36,37,1,0,0,0,37,7,1,0,0,0,38,36,1,0,0,0,39,40,6,4,-1,0,40,41,
-        3,10,5,0,41,50,1,0,0,0,42,43,10,3,0,0,43,44,5,4,0,0,44,49,3,10,5,
-        0,45,46,10,2,0,0,46,47,5,5,0,0,47,49,3,10,5,0,48,42,1,0,0,0,48,45,
+        3,10,5,0,41,50,1,0,0,0,42,43,10,2,0,0,43,44,5,4,0,0,44,49,3,10,5,
+        0,45,46,10,1,0,0,46,47,5,5,0,0,47,49,3,10,5,0,48,42,1,0,0,0,48,45,
         1,0,0,0,49,52,1,0,0,0,50,48,1,0,0,0,50,51,1,0,0,0,51,9,1,0,0,0,52,
         50,1,0,0,0,53,61,5,11,0,0,54,61,5,9,0,0,55,61,5,10,0,0,56,57,5,7,
         0,0,57,58,3,6,3,0,58,59,5,8,0,0,59,61,1,0,0,0,60,53,1,0,0,0,60,54,
@@ -75,7 +75,7 @@ class TypeCheckerParser ( Parser ):
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.13.2")
+        self.checkVersion("4.13.1")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
@@ -203,7 +203,7 @@ class TypeCheckerParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.type_ = str()
+            self.datatype = str()
 
         def ID(self):
             return self.getToken(TypeCheckerParser.ID, 0)
@@ -393,9 +393,9 @@ class TypeCheckerParser ( Parser ):
                         localctx = TypeCheckerParser.ExprPlusContext(self, TypeCheckerParser.ExprContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
                         self.state = 28
-                        if not self.precpred(self._ctx, 3):
+                        if not self.precpred(self._ctx, 2):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
                         self.state = 29
                         self.match(TypeCheckerParser.PLUS)
                         self.state = 30
@@ -406,9 +406,9 @@ class TypeCheckerParser ( Parser ):
                         localctx = TypeCheckerParser.ExprMinusContext(self, TypeCheckerParser.ExprContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
                         self.state = 31
-                        if not self.precpred(self._ctx, 2):
+                        if not self.precpred(self._ctx, 1):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
                         self.state = 32
                         self.match(TypeCheckerParser.MINUS)
                         self.state = 33
@@ -564,9 +564,9 @@ class TypeCheckerParser ( Parser ):
                         localctx = TypeCheckerParser.TermMulContext(self, TypeCheckerParser.TermContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_term)
                         self.state = 42
-                        if not self.precpred(self._ctx, 3):
+                        if not self.precpred(self._ctx, 2):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
                         self.state = 43
                         self.match(TypeCheckerParser.MUL)
                         self.state = 44
@@ -577,9 +577,9 @@ class TypeCheckerParser ( Parser ):
                         localctx = TypeCheckerParser.TermDivContext(self, TypeCheckerParser.TermContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_term)
                         self.state = 45
-                        if not self.precpred(self._ctx, 2):
+                        if not self.precpred(self._ctx, 1):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
                         self.state = 46
                         self.match(TypeCheckerParser.DIV)
                         self.state = 47
@@ -783,20 +783,20 @@ class TypeCheckerParser ( Parser ):
 
     def expr_sempred(self, localctx:ExprContext, predIndex:int):
             if predIndex == 0:
-                return self.precpred(self._ctx, 3)
+                return self.precpred(self._ctx, 2)
          
 
             if predIndex == 1:
-                return self.precpred(self._ctx, 2)
+                return self.precpred(self._ctx, 1)
          
 
     def term_sempred(self, localctx:TermContext, predIndex:int):
             if predIndex == 2:
-                return self.precpred(self._ctx, 3)
+                return self.precpred(self._ctx, 2)
          
 
             if predIndex == 3:
-                return self.precpred(self._ctx, 2)
+                return self.precpred(self._ctx, 1)
          
 
 

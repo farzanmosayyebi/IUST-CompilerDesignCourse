@@ -1,4 +1,4 @@
-# Generated from E:/IUST/TA/Compiler-14031/antlr_projects/2-TypeChecker/TypeChecker.g4 by ANTLR 4.13.2
+# Generated from D:/Elmos/S4031/CompilerDesign/IUST-CompilerDesignCourse/HW2/TypeChecker/TypeChecker.g4 by ANTLR 4.13.1
 from antlr4 import *
 if "." in __name__:
     from .TypeCheckerParser import TypeCheckerParser
