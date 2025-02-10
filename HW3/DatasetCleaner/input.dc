@@ -1,0 +1,6 @@
+CLEAN "dataset.csv"
+    REMOVE DUPLICATES,
+    DROP MISSING,
+    FILL MISSING "age" WITH 30,
+    FILTER "age" >= 18,
+    RENAME "old_name" TO "new_name"
